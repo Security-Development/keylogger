@@ -11,10 +11,7 @@ def getHook(pointer):
 
     hook = user32.SetWindowsHookExA(13, pointer, kernel32.GetModuleHandleW(), 0)
 
-    if hook:
-        return True
-    else:
-        return False
+    return True if hook else False
 
 def getPointer(fName):
     func = WINFUNCTYPE(c_int, c_int, c_int, POINTER(DWORD))
