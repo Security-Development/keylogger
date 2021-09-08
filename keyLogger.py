@@ -30,7 +30,7 @@ def unHook():
     hook = None
 
 def hookProc(nCode, wParam, lParam):
-    if wParam != (0x0100):
+    if wParam != (0x0100): #0x0100 : ESC
         return user32.CallNextHookEx(hook, nCode, wParam, lParam)
 
     hookKey = chr(lParam[0])
