@@ -29,7 +29,6 @@ def unHook():
     user32.UnhookWindowsHookEx(hook)
     hook = None
 
-
 def hookProc(nCode, wParam, lParam):
     if wParam != (0x0100):
         return user32.CallNextHookEx(hook, nCode, wParam, lParam)
